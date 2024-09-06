@@ -1,0 +1,50 @@
+<!-- src/app/item-list/item-list.component.html -->
+<div class="container">
+    <div class="controls">
+      <div class="sort-controls">
+        <button (click)="sortItems('id')">
+          Sort by ID {{ sortKey === 'id' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}
+        </button>
+        <button (click)="sortItems('title')">
+          Sort by Title {{ sortKey === 'title' ? (sortDirection === 'asc' ? '▲' : '▼') : '' }}
+        </button>
+      </div>
+      <div class="search-container">
+        <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterItems()" placeholder="Search" />
+        <div class="tag-dropdown">
+          <button class="dropbtn">Tags</button>
+          <div class="dropdown-content">
+            <a *ngFor="let tag of allTags" (click)="addTag(tag)" [class.selected]="selectedTags.includes(tag)">
+              {{ tag }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="selected-tags">
+      <span *ngFor="let tag of selectedTags" class="selected-tag">
+        {{ tag }}
+        <button (click)="removeTag(tag)">×</button>
+      </span>
+    </div>
+  
+    <div *ngIf="error" class="error">{{ error }}</div>
+  
+    <ul class="item-list">
+      <li *ngFor="let item of paginatedItems" class="item-card" appIntersectionObserver [ngClass]="themeService.theme$ | async">
+        <h3>{{ item.title }}</h3>
+        <p class="id">ID: {{ item.id }}</p>
+        <p>{{ item.body }}</p>
+        <div class="tags">
+          <span *ngFor="let tag of item.tags" class="tag">{{ tag }}</span>
+        </div>
+      </li>
+    </ul>
+  
+    <div class="pagination">
+      <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Previous</button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Next</button>
+    </div>
+  </div>

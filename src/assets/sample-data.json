@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Sample Item 1",
+        "body": "This is the body of sample item 1. It contains some text to demonstrate the layout.",
+        "tags": [
+            "important",
+            "work"
+        ],
+        "customCssClass": "highlight"
+    },
+    {
+        "id": 2,
+        "title": "Sample Item 2",
+        "body": "Here's sample item 2. It's a bit longer to show how different lengths of text appear in the cards.",
+        "tags": [
+            "personal",
+            "idea"
+        ],
+        "customCssClass": "bordered"
+    },
+    {
+        "id": 3,
+        "title": "Sample Item 3",
+        "body": "Sample item 3 is here to provide more variety in our data set.",
+        "tags": [
+            "urgent",
+            "project"
+        ],
+        "customCssClass": "shadowed"
+    },
+    {
+        "id": 4,
+        "title": "Sample Item 4",
+        "body": "Sample item 4 is here to provide more variety in our data set.",
+        "tags": [
+            "urgent",
+            "project"
+        ],
+        "customCssClass": "shadowed"
+    }
+]

@@ -1,1 +1,293 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+.light {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --header-footer-bg: rgba(0, 0, 0, 0.1);
+  --card-bg: rgba(0, 123, 255, 0.1);
+  --card-border: rgba(0, 123, 255, 0.2);
+  --card-text: #007bff;
+  --tag-bg: rgba(0, 123, 255, 0.2);
+  --tag-text: #007bff;
+}
+
+.dark {
+  --bg-color: #333;
+  --text-color: #f0f0f0;
+  --header-footer-bg: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(23, 162, 184, 0.1);
+  --card-border: rgba(23, 162, 184, 0.2);
+  --card-text: #17a2b8;
+  --tag-bg: rgba(23, 162, 184, 0.2);
+  --tag-text: #17a2b8;
+}
+
+.ocean {
+  --bg-color: #e0f7fa;
+  --text-color: #006064;
+  --header-footer-bg: rgba(0, 96, 100, 0.1);
+  --card-bg: rgba(79, 195, 247, 0.1);
+  --card-border: rgba(79, 195, 247, 0.2);
+  --card-text: #0277bd;
+  --tag-bg: rgba(255, 255, 255, 0.2);
+  --tag-text: #ffffff;
+}
+
+.forest {
+  --bg-color: #e8f5e9;
+  --text-color: #1b5e20;
+  --header-footer-bg: rgba(27, 94, 32, 0.1);
+  --card-bg: rgba(56, 142, 60, 0.1);
+  --card-border: rgba(56, 142, 60, 0.2);
+  --card-text: #388e3c;
+  --tag-bg: rgba(56, 142, 60, 0.2);
+  --tag-text: #388e3c;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+header,
+footer {
+  background-color: var(--header-footer-bg);
+}
+
+.item-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--card-text);
+}
+
+.tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sort-controls button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.item-list {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tags {
+  margin-top: 10px;
+}
+
+.tag {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-right: 4px;
+  margin-bottom: 4px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.tag:hover {
+  opacity: 1;
+}
+
+.error {
+  color: red;
+  margin-bottom: 20px;
+}
+
+.selected-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.selected-tag {
+  background-color: #e0e0e0;
+  padding: 2px 6px;
+  border-radius: 15px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.selected-tag button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.search-container input {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sort-controls,
+  .search-container {
+    margin-bottom: 10px;
+  }
+
+  .search-container {
+    width: 100%;
+  }
+}
+
+/* Dropdown Styling */
+select {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--card-text);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Input Field Styling */
+input[type="text"],
+input[type="search"],
+textarea {
+  padding: 8px 12px;
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--card-text);
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Button Styling (For Dropdown Control) */
+button {
+  font-size: 14px;
+  color: var(--text-color);
+  background-color: var(--card-bg);
+  background-color: var(--tag-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--tag-bg);
+  border-color: var(--card-text);
+}
+
+h1 {
+  color: var(--text-color);
+}
