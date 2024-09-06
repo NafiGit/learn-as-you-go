@@ -14,38 +14,40 @@ This project demonstrates an Angular application that fetches data from a mock R
 
 ## File Structure
 
-├── README.md 
+```bash
+├── README.md
 ├── node_modules
 ├── .angular
-├── angular.json 
-├── package-lock.json 
-├── package.json 
+├── angular.json
+├── package-lock.json
+├── package.json
 ├── public
-│ └── favicon.ico 
+│ └── favicon.ico
 ├── src
 │ ├── app
-│ │ ├── app.component.ts 
-│ │ ├── app.config.ts 
-│ │ ├── data.service.ts 
-│ │ ├── intersection-observer.directive.ts 
-│ │ ├── item-list 
-│ │ │ ├── item-list.component.css 
-│ │ │ ├── item-list.component.html 
-│ │ │ └── item-list.component.ts 
+│ │ ├── app.component.ts
+│ │ ├── app.config.ts
+│ │ ├── data.service.ts
+│ │ ├── intersection-observer.directive.ts
+│ │ ├── item-list
+│ │ │ ├── item-list.component.css
+│ │ │ ├── item-list.component.html
+│ │ │ └── item-list.component.ts
 │ │ ├── services
-│ │ │ └── view-count.service.ts 
-│ │ └── theme.service.ts 
+│ │ │ └── view-count.service.ts
+│ │ └── theme.service.ts
 │ ├── assets
-│ │ ├── resume.pdf 
-│ │ └── sample-data.json 
+│ │ ├── resume.pdf
+│ │ └── sample-data.json
 │ ├── environments
-│ │ ├── environment.development.ts 
-│ │ └── environment.ts 
+│ │ ├── environment.development.ts
+│ │ └── environment.ts
 │ ├── index.html
-│ ├── main.ts 
-│ └── styles.css 
-├── tsconfig.app.json 
-└── tsconfig.json 
+│ ├── main.ts
+│ └── styles.css
+├── tsconfig.app.json
+└── tsconfig.json
+```
 
 ## Setup Instructions
 
