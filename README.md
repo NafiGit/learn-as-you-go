@@ -54,7 +54,7 @@ This project demonstrates an Angular application that fetches data from a mock R
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-repo-url.git
+   git clone https://github.com/NafiGit/http-request-app.git
    ```
 
 2. Navigate to the project directory:
