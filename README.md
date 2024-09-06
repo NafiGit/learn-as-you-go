@@ -82,7 +82,12 @@ This project demonstrates an Angular application that fetches data from a mock R
 
 Screenshots demonstrating the application functionality and design:
 
+### Fullscreen UI (Dark)
+
 ![Screenshot of main UI](/src/assets/screenshots/FullscreenDark.jpeg)
+
+### Mobile UI (Forest)
+
 ![Screenshot of mobile view](/src/assets/screenshots/MobileForest.jpeg)
 
 ## Functionality Breakdown
