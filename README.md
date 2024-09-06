@@ -1,27 +1,117 @@
-# HttpRequestApp
+# Front-end Intern Assignment
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.3.
+## Overview
 
-## Development server
+This project demonstrates an Angular application that fetches data from a mock REST API using an Angular service and displays it in a component. It handles HTTP requests, error management, and includes sorting functionality. The app is responsive and works well on both desktop and mobile devices.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- **HTTP Request Handling**: Uses HttpClient to fetch data from a mock REST API.
+- **Error Handling**: Implements error handling for failed HTTP requests.
+- **Data Display**: Fetched data is rendered dynamically in the component.
+- **Sorting**: Includes a sorting functionality for data presentation.
+- **Responsive Design**: The app is responsive, ensuring a smooth user experience on different screen sizes.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## File Structure
 
-## Build
+├── README.md 
+├── node_modules
+├── .angular
+├── angular.json 
+├── package-lock.json 
+├── package.json 
+├── public
+│ └── favicon.ico 
+├── src
+│ ├── app
+│ │ ├── app.component.ts 
+│ │ ├── app.config.ts 
+│ │ ├── data.service.ts 
+│ │ ├── intersection-observer.directive.ts 
+│ │ ├── item-list 
+│ │ │ ├── item-list.component.css 
+│ │ │ ├── item-list.component.html 
+│ │ │ └── item-list.component.ts 
+│ │ ├── services
+│ │ │ └── view-count.service.ts 
+│ │ └── theme.service.ts 
+│ ├── assets
+│ │ ├── resume.pdf 
+│ │ └── sample-data.json 
+│ ├── environments
+│ │ ├── environment.development.ts 
+│ │ └── environment.ts 
+│ ├── index.html
+│ ├── main.ts 
+│ └── styles.css 
+├── tsconfig.app.json 
+└── tsconfig.json 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Setup Instructions
 
-## Running unit tests
+1. Clone the repository:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/your-repo-url.git
+   ```
 
-## Running end-to-end tests
+2. Navigate to the project directory:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   cd front-end-intern-assignment
+   ```
 
-## Further help
+3. Install dependencies:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+   ```bash
+   npm install
+   ```
+
+4. Run the application:
+
+   ```bash
+   ng serve
+   ```
+
+5. Access the application:
+   Open your browser and navigate to http://localhost:4200.
+
+## Screenshots
+
+Screenshots demonstrating the application functionality and design:
+
+![Screenshot of main UI](/http-request-app/src/assets/screenshots/FullscreenDark.jpeg)
+![Screenshot of mobile view](/http-request-app/src/assets/screenshots/MobileForest.jpeg)
+
+## Functionality Breakdown
+
+1. **HTTP Request Handling**
+
+   - Implemented in `data.service.ts` using Angular's HttpClientModule.
+   - Fetches data from a mock REST API in `sample-data.json`.
+
+2. **Error Handling**
+
+   - Managed using HttpClient error handling mechanisms.
+   - Displays an appropriate error message in the UI if the API call fails.
+
+3. **Data Display**
+
+   - Data is dynamically displayed in the `item-list.component.html`.
+
+4. **Sorting Functionality**
+   - Simple sorting logic is implemented within `item-list.component.ts` for user-friendly data organization.
+
+## Additional Features
+
+- **Sorting**: Implemented using custom logic, allowing the user to sort fetched data.
+- **Responsive Design**: Ensured that the app is mobile-friendly using CSS media queries.
+
+## Notes
+
+- **Time Limit**: Completed within the specified 24-hour time limit.
+- **Libraries**: No external libraries were used for sorting, ensuring custom implementation.
+
+## Conclusion
+
+This project demonstrates the ability to handle HTTP requests in Angular, manage asynchronous data, implement error handling, and provide a clean and responsive user interface.
