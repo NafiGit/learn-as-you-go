@@ -1,52 +1,34 @@
-# Front-end Intern Assignment
+# Country Information App
 
 ## Overview
 
-This project demonstrates an Angular application that fetches data from a mock REST API using an Angular service and displays it in a component. It handles HTTP requests, error management, and includes sorting functionality. The app is responsive and works well on both desktop and mobile devices.
+This project is an Angular application that fetches and displays country information from a REST API. It implements responsive design, theme switching, and advanced filtering capabilities. The app adheres to the provided style guide and uses data from the supplied JSON file.
 
 ## Features
 
-- **HTTP Request Handling**: Uses HttpClient to fetch data from a mock REST API.
-- **Error Handling**: Implements error handling for failed HTTP requests.
-- **Data Display**: Fetched data is rendered dynamically in the component.
-- **Sorting**: Includes a sorting functionality for data presentation.
-- **Responsive Design**: The app is responsive, ensuring a smooth user experience on different screen sizes.
+- **Data Fetching**: Retrieves country data from a REST API (simulated with local JSON file).
+- **Responsive Design**: Adapts to both mobile (375px) and desktop (1440px) views.
+- **Theme Switching**: Toggles between light and dark modes as per the style guide.
+- **Advanced Filtering**: Allows users to search countries by name and filter by region.
+- **Detailed Information**: Provides in-depth details about each country on a separate page.
 
 ## File Structure
 
 ```bash
 ├── README.md
-├── node_modules
-├── .angular
-├── angular.json
-├── package-lock.json
-├── package.json
-├── public
-│ └── favicon.ico
 ├── src
 │ ├── app
-│ │ ├── app.component.ts
-│ │ ├── app.config.ts
-│ │ ├── data.service.ts
-│ │ ├── intersection-observer.directive.ts
-│ │ ├── item-list
-│ │ │ ├── item-list.component.css
-│ │ │ ├── item-list.component.html
-│ │ │ └── item-list.component.ts
+│ │ ├── components
+│ │ │ ├── country-list
+│ │ │ └── country-detail
 │ │ ├── services
-│ │ │ └── view-count.service.ts
-│ │ └── theme.service.ts
+│ │ │ ├── data.service.ts
+│ │ │ └── theme.service.ts
+│ │ └── app.component.ts
 │ ├── assets
-│ │ ├── resume.pdf
-│ │ └── sample-data.json
-│ ├── environments
-│ │ ├── environment.development.ts
-│ │ └── environment.ts
-│ ├── index.html
-│ ├── main.ts
+│ │ └── data.json
 │ └── styles.css
-├── tsconfig.app.json
-└── tsconfig.json
+└── angular.json
 ```
 
 ## Setup Instructions
@@ -54,13 +36,13 @@ This project demonstrates an Angular application that fetches data from a mock R
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/NafiGit/http-request-app.git
+   git clone https://github.com/NafiGit/country-info-app.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd front-end-intern-assignment
+   cd country-info-app
    ```
 
 3. Install dependencies:
@@ -75,50 +57,46 @@ This project demonstrates an Angular application that fetches data from a mock R
    ng serve
    ```
 
-5. Access the application:
-   Open your browser and navigate to http://localhost:4200.
+5. Access the application at http://localhost:4200
 
 ## Screenshots
 
-Screenshots demonstrating the application functionality and design:
+### Home View (Light Theme)
 
-### Fullscreen UI (Dark)
+![Home Light Theme](/src/assets/screenshots/FullScreenLight.jpeg)
 
-![Screenshot of main UI](/src/assets/screenshots/FullscreenDark.jpeg)
+### Home View (Dark Theme)
 
-### Mobile UI (Forest)
+![Home Dark Theme](/src/assets/screenshots/FullscreenDark.jpeg)
 
-![Screenshot of mobile view](/src/assets/screenshots/MobileForest.jpeg)
+### Details View
 
-## Functionality Breakdown
+![Details Light Theme](/src/assets/screenshots/Details.jpeg)
 
-1. **HTTP Request Handling**
+## Styling
 
-   - Implemented in `data.service.ts` using Angular's HttpClientModule.
-   - Fetches data from a mock REST API in `sample-data.json`.
+The application follows the style guide provided:
 
-2. **Error Handling**
+- **Colors**:
 
-   - Managed using HttpClient error handling mechanisms.
-   - Displays an appropriate error message in the UI if the API call fails.
+  - Dark Blue (Dark Mode Elements): hsl(209, 23%, 22%)
+  - Very Dark Blue (Dark Mode Background): hsl(207, 26%, 17%)
+  - Very Dark Blue (Light Mode Text): hsl(200, 15%, 8%)
+  - Dark Gray (Light Mode Input): hsl(0, 0%, 52%)
+  - Very Light Gray (Light Mode Background): hsl(0, 0%, 98%)
+  - White (Dark Mode Text & Light Mode Elements): hsl(0, 0%, 100%)
 
-3. **Data Display**
+- **Typography**:
+  - Font: Nunito Sans
+  - Weights: 300, 600, 800
+  - Sizes: 14px (Homepage), 16px (Detail Page)
 
-   - Data is dynamically displayed in the `item-list.component.html`.
+## Data Source
 
-4. **Sorting Functionality**
-   - Simple sorting logic is implemented within `item-list.component.ts` for user-friendly data organization.
+The application uses country data from the provided `data.json` file, which includes detailed information about various countries including their names, capitals, populations, and more.
 
-## Additional Features
+## Additional Notes
 
-- **Sorting**: Implemented using custom logic, allowing the user to sort fetched data.
-- **Responsive Design**: Ensured that the app is mobile-friendly using CSS media queries.
-
-## Notes
-
-- **Time Limit**: Completed within the specified 24-hour time limit.
-- **Libraries**: No external libraries were used for sorting, ensuring custom implementation.
-
-## Conclusion
-
-This project demonstrates the ability to handle HTTP requests in Angular, manage asynchronous data, implement error handling, and provide a clean and responsive user interface.
+- The application is built with Angular and TypeScript.
+- Responsive design ensures optimal viewing on devices ranging from 375px to 1440px width.
+- The theme switcher allows users to toggle between light and dark modes seamlessly.

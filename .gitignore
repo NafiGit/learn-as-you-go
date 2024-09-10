@@ -46,3 +46,4 @@ Thumbs.db
 *.log
 *.lock
 .DS_Store
+.vercel

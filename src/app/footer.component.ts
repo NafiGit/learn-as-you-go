@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faFileAlt, faHeart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ThemeService } from './theme.service';
+import { ThemeService } from './services/theme.service';
 import { AsyncPipe, NgClass } from '@angular/common';
 
 @Component({

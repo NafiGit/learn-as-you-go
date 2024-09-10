@@ -3,8 +3,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { Country } from './models/country.model';
-import data from '../assets/data.json';
+import { Country } from '../models/country.model';
+import data from '../../assets/data.json';
 
 @Injectable({
   providedIn: 'root'

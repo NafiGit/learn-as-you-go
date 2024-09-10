@@ -3,8 +3,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { DataService } from '../data.service';
-import { ThemeService } from '../theme.service';
+import { DataService } from '../services/data.service';
+import { ThemeService } from '../services/theme.service';
 import { IntersectionObserverDirective } from '../intersection-observer.directive';
 import { Country } from '../models/country.model';
 import { Router } from '@angular/router';
