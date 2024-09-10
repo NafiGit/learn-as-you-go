@@ -8,6 +8,9 @@ export type Theme = 'light' | 'dark' | 'ocean' | 'forest';
   providedIn: 'root'
 })
 export class ThemeService {
+  toggleTheme() {
+    throw new Error('Method not implemented.');
+  }
   private themeSubject = new BehaviorSubject<Theme>('light');
   theme$ = this.themeSubject.asObservable();
 
