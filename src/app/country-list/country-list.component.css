@@ -9,26 +9,30 @@
 .controls {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 48px;
 }
 
 .search-container {
-  width: 480px;
   margin-left: 0px;
+}
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 480px;
 }
 
 .search-icon {
   position: absolute;
   left: 32px;
-  top: 50%;
-  transform: translateY(-50%);
   color: var(--input-color);
+  pointer-events: none;
 }
 
 .search-container input {
   width: 100%;
-  padding: 18px 74px;
+  padding: 18px 16px 18px 74px; /* Adjusted padding for icon spacing */
   border: none;
   border-radius: 5px;
   font-size: 14px;

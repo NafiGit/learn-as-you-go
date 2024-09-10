@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './theme.service';
+import { FooterComponent } from './footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FooterComponent],
   template: `
     <div [ngClass]="(themeService.theme$ | async)">
       <header>
@@ -19,6 +20,7 @@ import { ThemeService } from './theme.service';
       <main>
         <router-outlet></router-outlet>
       </main>
+      <app-footer></app-footer>
     </div>
   `,
   styles: [`
@@ -65,6 +67,17 @@ import { ThemeService } from './theme.service';
     }
     main {
       padding: 0;
+    }
+    @media (max-width: 375px) {
+      header {
+        padding: 23px 16px;
+      }
+      h1 {
+        font-size: 14px;
+      }
+      .theme-toggle {
+        font-size: 12px;
+      }
     }
   `]
 })

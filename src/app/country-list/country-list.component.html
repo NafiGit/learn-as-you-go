@@ -3,12 +3,14 @@
 <div class="container" [ngClass]="themeService.theme$ | async">
   <div class="controls">
     <div class="search-container">
-      <i class="fas fa-search search-icon"></i>
-      <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterCountries()" placeholder="Search for a country..." />
+      <div class="search-input-wrapper">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterCountries()" placeholder="Search for a country..." />
+      </div>
     </div>
     <div class="filter-container">
       <select [(ngModel)]="selectedRegion" (ngModelChange)="onRegionChange($event)">
-        <option value="" disabled selected>Filter by Region</option>
+        <option value="">Filter by Region</option>
         <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
       </select>
     </div>
