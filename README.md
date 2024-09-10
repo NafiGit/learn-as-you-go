@@ -16,19 +16,40 @@ This project is an Angular application that fetches and displays country informa
 
 ```bash
 ├── README.md
+├── angular.json
+├── package-lock.json
+├── package.json
+├── public
+│   └── favicon.ico
 ├── src
-│ ├── app
-│ │ ├── components
-│ │ │ ├── country-list
-│ │ │ └── country-detail
-│ │ ├── services
-│ │ │ ├── data.service.ts
-│ │ │ └── theme.service.ts
-│ │ └── app.component.ts
-│ ├── assets
-│ │ └── data.json
-│ └── styles.css
-└── angular.json
+│   ├── app
+│   │   ├── app.component.ts
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   │   ├── country-detail/
+│   │   ├── country-list/
+│   │   ├── footer.component.ts
+│   │   ├── intersection-observer.directive.ts
+│   │   ├── models
+│   │   │   └── country.model.ts
+│   │   └── services
+│   │       ├── data.service.ts
+│   │       └── theme.service.ts
+│   ├── assets
+│   │   ├── data.json
+│   │   ├── sample-data.json
+│   │   └── screenshots
+│   │       ├── Details.jpeg
+│   │       ├── FullScreenLight.jpeg
+│   │       └── FullscreenDark.jpeg
+│   ├── environments
+│   │   ├── environment.development.ts
+│   │   └── environment.ts
+│   ├── index.html
+│   ├── main.ts
+│   └── styles.css
+├── tsconfig.app.json
+└── tsconfig.json
 ```
 
 ## Setup Instructions
