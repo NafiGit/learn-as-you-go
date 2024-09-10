@@ -7,6 +7,7 @@ import { DataService } from '../data.service';
 import { ThemeService } from '../theme.service';
 import { IntersectionObserverDirective } from '../intersection-observer.directive';
 import { Country } from '../models/country.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-country-list',
@@ -22,7 +23,7 @@ export class CountryListComponent implements OnInit {
   selectedRegion: string = '';
   regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
 
-  constructor(private dataService: DataService, public themeService: ThemeService) {}
+  constructor(private dataService: DataService, public themeService: ThemeService, private router: Router) {}
 
   ngOnInit(): void {
     this.fetchCountries();
@@ -51,5 +52,9 @@ export class CountryListComponent implements OnInit {
   onRegionChange(region: string): void {
     this.selectedRegion = region;
     this.filterCountries();
+  }
+
+  onCountryClick(country: Country) {
+    this.router.navigate(['/country', country.alpha3Code]);
   }
 }

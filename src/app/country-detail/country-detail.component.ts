@@ -1,55 +1,63 @@
 // src/app/country-detail/country-detail.component.ts
 
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { DataService } from '../data.service';
 import { ThemeService } from '../theme.service';
-import { IntersectionObserverDirective } from '../intersection-observer.directive';
 import { Country } from '../models/country.model';
 
 @Component({
-  selector: 'app-country-list',
+  selector: 'app-country-detail',
   standalone: true,
-  imports: [CommonModule, FormsModule, IntersectionObserverDirective],
-  templateUrl: './country-list.component.html',
-  styleUrls: ['./country-list.component.css']
+  imports: [CommonModule],
+  templateUrl: './country-detail.component.html',
+  styleUrls: ['./country-detail.component.css']
 })
-export class CountryListComponent implements OnInit {
-  countries: Country[] = [];
-  filteredCountries: Country[] = [];
-  searchTerm: string = '';
-  selectedRegion: string = '';
-  regions: string[] = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'];
+export class CountryDetailComponent implements OnInit {
+  country: Country | undefined;
 
-  constructor(private dataService: DataService, public themeService: ThemeService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private dataService: DataService,
+    public themeService: ThemeService
+  ) {}
 
-  ngOnInit(): void {
-    this.fetchCountries();
-  }
-
-  fetchCountries(): void {
-    this.dataService.getCountries().subscribe({
-      next: (data) => {
-        this.countries = data;
-        this.filteredCountries = [...this.countries];
-      },
-      error: (error) => {
-        console.error('Error fetching countries:', error);
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      const id = params.get('id');
+      if (id) {
+        this.fetchCountryDetails(id);
       }
     });
   }
 
-  filterCountries(): void {
-    this.filteredCountries = this.countries.filter(country => 
-      (country.name.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
-       country.region.toLowerCase().includes(this.searchTerm.toLowerCase())) &&
-      (this.selectedRegion === '' || country.region === this.selectedRegion)
-    );
+  fetchCountryDetails(id: string) {
+    this.dataService.getCountryByCode(id).subscribe({
+      next: (country) => {
+        this.country = country;
+      },
+      error: (error) => {
+        console.error('Error fetching country details:', error);
+        // Handle error (e.g., show error message or redirect)
+      }
+    });
   }
 
-  onRegionChange(region: string): void {
-    this.selectedRegion = region;
-    this.filterCountries();
+  goBack() {
+    this.router.navigate(['/']);
+  }
+
+  goToCountry(code: string) {
+    this.router.navigate(['/country', code]);
+  }
+
+  getCurrencies(currencies: any[]): string {
+    return currencies?.map(c => c.name).join(', ') || 'N/A';
+  }
+
+  getLanguages(languages: any[]): string {
+    return languages?.map(l => l.name).join(', ') || 'N/A';
   }
 }

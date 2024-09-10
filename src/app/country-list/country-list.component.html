@@ -1,26 +1,28 @@
 <!-- src/app/country-list/country-list.component.html -->
  
-<div class="container">
+<div class="container" [ngClass]="themeService.theme$ | async">
   <div class="controls">
     <div class="search-container">
+      <i class="fas fa-search search-icon"></i>
       <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="filterCountries()" placeholder="Search for a country..." />
     </div>
     <div class="filter-container">
       <select [(ngModel)]="selectedRegion" (ngModelChange)="onRegionChange($event)">
-        <option value="">Filter by Region</option>
+        <option value="" disabled selected>Filter by Region</option>
         <option *ngFor="let region of regions" [value]="region">{{ region }}</option>
       </select>
     </div>
   </div>
 
   <ul class="country-list">
-    <li *ngFor="let country of filteredCountries" class="country-card" appIntersectionObserver
-      [ngClass]="themeService.theme$ | async">
+    <li *ngFor="let country of filteredCountries" class="country-card" appIntersectionObserver (click)="onCountryClick(country)">
       <img [src]="country.flags.png" [alt]="country.name + ' flag'" class="country-flag">
-      <h3>{{ country.name }}</h3>
-      <p><strong>Population:</strong> {{ country.population | number }}</p>
-      <p><strong>Region:</strong> {{ country.region }}</p>
-      <p><strong>Capital:</strong> {{ country.capital }}</p>
+      <div class="country-info">
+        <h3>{{ country.name }}</h3>
+        <p><strong>Population:</strong> {{ country.population | number }}</p>
+        <p><strong>Region:</strong> {{ country.region }}</p>
+        <p><strong>Capital:</strong> {{ country.capital }}</p>
+      </div>
     </li>
   </ul>
 </div>

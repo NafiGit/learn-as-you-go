@@ -15,4 +15,9 @@ export class DataService {
   getCountries(): Observable<Country[]> {
     return of(data as Country[]);
   }
+
+  getCountryByCode(code: string): Observable<Country | undefined> {
+    const country = (data as Country[]).find(c => c.alpha3Code === code);
+    return of(country);
+  }
 }

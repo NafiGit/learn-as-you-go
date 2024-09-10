@@ -1,5 +1,8 @@
 import { Routes } from '@angular/router';
+import { CountryListComponent } from './country-list/country-list.component';
+import { CountryDetailComponent } from './country-detail/country-detail.component';
 
 export const routes: Routes = [
-  // Define your routes here
+  { path: '', component: CountryListComponent },
+  { path: 'country/:id', component: CountryDetailComponent },
 ];
